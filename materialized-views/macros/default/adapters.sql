@@ -12,8 +12,9 @@
 
 {% macro refresh_materialized_view(relation, config) %}
     {{ return(adapter.dispatch('refresh_materialized_view')(relation, config)) }}
+{% endmacro %}
 
-d_view(relation, config) -%}
+{% macro default__refresh_materialized_view(relation, config) -%}
 
     refresh materialized view {{relation}}
 
